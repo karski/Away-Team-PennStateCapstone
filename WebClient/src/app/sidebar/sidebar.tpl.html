@@ -1,0 +1,12 @@
+<div class="navbar-default navbar-static-side" role="navigation" ng-show="$state.is('team') || $state.is('events') || $state.is('members') || $state.is('expenses')" ng-controller="SidebarController">
+    <div class="sidebar-collapse in" ng-show="windowWidth > 768 || !navbarCollapsed" style="height: auto;" resizable>
+        <ul class="nav" id="side-menu">
+            <li ng-class="{ active: $state.current.name == 'team' }"><a href="" ui-sref="team"><i class="fa fa-dashboard fa-fw"></i> Team Home</a></li>
+            <li ng-class="{ active: $state.current.name == 'events' }"><a href=""  ui-sref="events"><i class="fa fa-calendar fa-fw"></i> Agenda</a></li>
+            <li ng-class="{ active: $state.current.name == 'expenses' }"><a href="" ui-sref="expenses"><i class="fa fa-credit-card fa-fw"></i> Expenses</a></li>
+            <li ng-class="{ active: $state.current.name == 'members' }"><a href="" ui-sref="members"><i class="fa icon-group fa-fw"></i> Members</a></li>
+        </ul>
+        <!-- /#side-menu -->
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>

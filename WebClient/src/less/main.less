@@ -1,0 +1,187 @@
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
+
+
+/**
+ * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
+ * project should be imported as the rest are just wasting space.
+ */
+
+
+//BOOTSTRAP
+
+@import '../../vendor/bootstrap/less/mixins.less';
+@import '../../vendor/bootstrap/less/utilities.less';
+@import '../../vendor/bootstrap/less/scaffolding.less';
+@import '../../vendor/bootstrap/less/type.less';
+@import '../../vendor/bootstrap/less/grid.less';
+@import '../../vendor/bootstrap/less/navs.less';
+@import '../../vendor/bootstrap/less/forms.less';
+@import '../../vendor/bootstrap/less/navbar.less';
+@import '../../vendor/bootstrap/less/buttons.less';
+@import '../../vendor/bootstrap/less/button-groups.less';
+@import '../../vendor/bootstrap/less/dropdowns.less';
+@import '../../vendor/bootstrap/less/modals.less';
+@import '../../vendor/bootstrap/less/tooltip.less';
+@import '../../vendor/bootstrap/less/popovers.less';
+@import '../../vendor/bootstrap/less/alerts.less';
+@import '../../vendor/bootstrap/less/jumbotron.less';
+@import '../../vendor/bootstrap/less/close.less';
+@import '../../vendor/bootstrap/less/input-groups.less';
+@import '../../vendor/bootstrap/less/labels.less';
+@import '../../vendor/bootstrap/less/glyphicons.less';
+@import '../../vendor/bootstrap/less/badges.less';
+@import '../../vendor/bootstrap/less/panels.less';
+
+@import '../../vendor/ng-grid/ng-grid.less';
+
+
+
+
+
+//FONT AWESOME
+@import '../../vendor/fontawesome/less/font-awesome.less';
+
+/**
+ * This is our main variables file. It in turn imports the `variables` file from
+ * Twitter Bootstrap. We must include it last so we can overwrite any variable
+ * definitions in our imported stylesheets.
+ */
+
+@import 'variables.less';
+
+
+/**
+ * Typography
+ */
+
+
+
+
+/**
+ * Now that all app-wide styles have been applied, we can load the styles for
+ * all the submodules and components we are using. 
+ *
+ * TODO: In a later version of this boilerplate, I'd like to automate this.
+ */
+
+@import '../app/editAccount/editAccount.less';
+@import '../app/header/header.less';
+@import '../app/home/home.less';
+@import '../app/register/register.less';
+@import '../app/sidebar/sidebar.less';
+@import '../app/team/team.less';
+@import '../app/tasks/tasks.less';
+@import '../app/members/members.less';
+@import '../app/events/events.less';
+@import '../app/expenses/expenses.less';
+
+
+/**
+ * GLOBAL STYLING
+ */
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #252B52;
+  background-image: url(../assets/images/orlandoSkyline.svg);
+}
+
+@media(max-width:768px) {
+  .container{
+    padding-top: 150px !important;
+    margin-left: 0px;
+  }
+}
+
+@media(max-width:1690px) and (min-width:769px){
+  .container{
+    margin-left: 300px;
+    width: 70%;
+  }
+}
+
+h1 {
+  text-shadow: 2px 2px 2px #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Century Gothic', Georgia, Times, serif;
+  color: white;
+}
+p, div {
+  font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+}
+
+.container{
+  height: 100%;
+  padding-top: 60px;
+  background-color:rgba(255,255,255,0.4);
+  -webkit-backface-visibility: hidden;
+}
+
+.angular-google-map-container { height: 400px; }
+
+.wrapper {
+  min-height: 100%;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.footer, .push {
+  padding-top: 56px;
+  height: 100%;
+}
+
+
+.loading-jumbo {
+  text-align: center;
+  cursor: progress;
+}
+
+.main-jumbo {
+  text-align: center;
+  background-color:rgba(0,0,0,0);
+  color: white;
+}
+
+// Utility class to hide elements when in 'sm' or 'xs' bootstrap media size
+.hidden-devices {
+  @media (max-width: @screen-sm-max) {
+    .responsive-invisibility();
+  }
+}
+
+.login-error {
+  background-color:#FA3F3C;
+  color:white;
+  text-align:center;
+  font-size: 16;
+  height: 0;
+  overflow: hidden;
+  transition: height 1s;
+  &.active {
+    height: 50px;
+  }
+}
+
+// Transitions when buttons change color/class
+.btn {
+  transition-duration: .5s;
+  transition-property: color, background-color;
+  transition-timing-function: ease;
+}
+
+.footer, .push {
+  color: white;
+  height: 155px; /* .push must be the same height as .footer */
+}

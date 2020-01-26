@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
+
+            <EditText
+                android:id="@+id/teamNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Team Name"
+                android:inputType="textCapWords"
+                android:lines="1" />
+
+            <CheckBox
+                android:id="@+id/managedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0"
+                android:text="Private" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/teamLocationInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Location Name"
+            android:inputType="textCapWords"
+            android:lines="1" />
+
+        <EditText
+            android:id="@+id/teamDescriptionInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:ems="10"
+            android:hint="Type description here"
+            android:inputType="textCapSentences|textMultiLine" />
+
+        <android.widget.TextView
+            android:id="@+id/createTeamPrivateExplain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="A private team will have managers that must approve all members to join."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:visibility="gone"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+</ScrollView>

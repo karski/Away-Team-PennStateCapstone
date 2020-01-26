@@ -1,0 +1,18 @@
+<div ng-controller="TaskController">
+    <h2>Tasks <i class="fa icon-plus addTask" ng-click="createTaskModal()" tooltip="Add Task"></i> </h2>
+    <div class="container-fluid" ng-show="teamTasks.length > 0">
+        <accordion>
+            <accordion-group ng-repeat="task in teamTasks | orderBy:'taskCompleted'" ng-class="{completeTask: task.taskCompleted}">
+                <accordion-heading>
+                    {{task.taskTitle}} <i class="pull-right fa icon-remove" tooltip="Delete Task" ng-click="deleteTask(task)"></i>
+                                        <i class="pull-right fa fa-edit" tooltip="Edit Task" ng-click="modifyTaskModal(task)"></i>
+                                        <i class="pull-right fa icon-ok" tooltip="Change Completion Status" ng-click="markAsComplete(task)"></i>
+                </accordion-heading>
+               {{task.taskDescription}}
+            </accordion-group>
+        </accordion>
+    </div>
+    <div class="container-fluid" ng-hide="teamTasks.length > 0">
+        <i>There are currently no team tasks. Add a team task by clicking the <i class="fa icon-plus"></i> button above.</i>
+    </div>
+</div>

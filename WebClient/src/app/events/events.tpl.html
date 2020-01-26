@@ -1,0 +1,41 @@
+<div ng-controller="EventController">
+    <h1>{{teamService.selectedTeam.teamName}} Events <i class="fa icon-plus addTask" ng-click="createEventModal()" tooltip="Add Event"></i></h1>
+    <div class="container-fluid">
+        <accordion>
+            <accordion-group ng-repeat="event in teamEvents | orderBy:'teamEventStartTime' ">
+                <accordion-heading>
+                    <strong>{{event.teamEventStartTime | date:dateFormatDate}}</strong> <span style="padding-left: 20px;">{{event.teamEventName}}</span>
+                    <i class="pull-right fa icon-remove" tooltip="Remove Event" confirmed-click="removeEvent(event)"
+                       ng-confirm-click="Are you sure you want to remove the selected event?"></i>
+                    <i class="pull-right fa icon-edit" tooltip="Edit Task" ng-click="modifyEventModal(event)"></i>
+                </accordion-heading>
+                <div>
+                    <div class="eventDescriptionHeader">
+                        <i>{{event.teamEventDescription}}</i>
+                        <hr>
+                    </div>
+                    <div class="columnOne-wrap">
+                        <div class="columnOne">
+                            <label>Start Time</label>
+                            <address>{{event.teamEventStartTime | date:dateFormatFull}}</address>
+                        </div>
+                        <div class="columnOne">
+                            <label>End Time</label>
+                            <address>{{event.teamEventEndTime | date:dateFormatFull}}</address>
+                        </div>
+                    </div>
+                    <div class="columnTwo">
+                        <label  ng-show="event.teamEventLocationString == ''">There is no location set for this event.</label>
+                        <label ng-show="event.teamEventLocationString != ''">{{event.teamEventLocationString}}</label>
+                        <a target="_blank" href="https://maps.google.com/?q={{event.teamEventLocationString}}" ng-show="event.teamEventLocationString != ''"><i class="fa icon-location-arrow" tooltip="Get Directions" style="cursor:pointer"></i></a>
+                        <map style="display:block;height:300px" center="{{event.teamEventLocationString}}"
+                             map-type-control="false" scrollwheel="false" draggable="false" zoom-control="false" pan-control="false" overview-map-control="false" street-view-control="false" rotate-control="false">
+                            <marker position="{{event.teamEventLocationString}}"></marker>
+                        </map>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </accordion-group>
+        </accordion>
+    </div>
+</div>

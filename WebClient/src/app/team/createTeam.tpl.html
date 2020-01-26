@@ -1,0 +1,48 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{modalTitle}}</h3>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-signin" name="createTeamForm" role="createTeam">
+            <div class="form-input">
+                <label>Team Name</label>
+                <input type="text" class="form-control" placeholder="Team Name" name="teamName" ng-model="createTeam.teamName" autofocus="true"
+                       ng-minlength="4" ng-maxlength="30" ng-required="true" ng-disabled="!disableEdit">
+                <div class="errors" ng-class="{ active: createTeamForm.teamName.$invalid && createTeamForm.teamName.$dirty }">
+                    <div class="error ng-hide" ng-show="createTeamForm.teamName.$error.minlength">
+                        <p>Team name is too short!</p>
+                    </div>
+                    <div class="error ng-hide" ng-show="createTeamForm.teamName.$error.maxlength">
+                        <p>Max team name length is 30, please shorten it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-input">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="Description" name="teamDescription" ng-model="createTeam.teamDescription">
+            </div>
+
+            <div class="form-input">
+                <label>City</label>
+                <input type="text" class="form-control" placeholder="Team Location" name="teamLocationName" ng-model="createTeam.teamLocationName"
+                       ng-minlength="4" ng-required="true">
+                <div class="errors" ng-class="{ active: createTeamForm.teamLocationName.$invalid && createTeamForm.teamLocationName.$dirty }">
+                    <div class="error ng-hide" ng-show="createTeamForm.teamLocationName.$error.minlength">
+                        <p>Username is too short!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox">
+                <label><strong>Team Managed</strong></label>
+                <input type="checkbox" name="teamManaged" ng-model="createTeam.teamManaged" ng-true-value="true" ng-false-value="false">
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="ok()" ng-disabled="createTeamForm.$invalid || createTeamForm.$pristine || createTeamWorking">OK</button>
+        <button class="btn btn-danger" ng-click="cancel()" ng-disabled="createTeamWorking">Cancel</button>
+    </div>
+</div>

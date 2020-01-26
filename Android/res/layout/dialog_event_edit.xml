@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/eventedit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:hint="Event Title"
+            android:inputType="textCapWords"
+            android:textStyle="bold" >
+
+            <requestFocus />
+        </EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/expenseDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Start: "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/eventedit_start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Date" />
+
+            <Button
+                android:id="@+id/eventedit_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Time" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/expenseDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End:   "
+                 android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/eventedit_end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End Date" />
+
+            <Button
+                android:id="@+id/eventedit_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End Time" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/eventedit_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Event Location"
+            android:inputType="textCapWords" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark" />
+
+        <EditText
+            android:id="@+id/eventedit_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Event Description"
+            android:inputType="textMultiLine|textCapSentences" >
+        </EditText>
+    </LinearLayout>
+
+</ScrollView>

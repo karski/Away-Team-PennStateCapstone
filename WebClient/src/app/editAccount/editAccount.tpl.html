@@ -1,0 +1,75 @@
+  <form class="form-signin" name="editUserForm" role="editUser" ng-submit="editUser(editUserForm)" ng-init="setUserInfo()">
+    <h2 class="form-signin-heading"><i class="fa fa-edit"></i>Edit User</h2>
+
+    <div class="form-input">
+        <label>First Name</label>
+      <input type="text" class="form-control" placeholder="First Name" name="firstName" ng-model="editUserObj.firstName" ng-minlength="2" ng-maxlength="32" ng-required="true">
+      <div class="errors" ng-class="{ active: editUserForm.firstName.$invalid && editUserForm.firstName.$dirty }">
+        <div class="error ng-hide" ng-show="editUserForm.firstName.$error.minlength">
+          <p>Provided name is too short!</p>
+        </div>
+        <div class="error ng-hide" ng-show="editUserForm.name.$error.maxlength">
+          <p>Max name length is 32, please shorten it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-input">
+        <label>Last Name</label>
+      <input type="text" class="form-control" placeholder="Last Name" name="lastName" ng-model="editUserObj.lastName" ng-minlength="2" ng-maxlength="32" ng-required="true">
+      <div class="errors" ng-class="{ active: editUserForm.lastName.$invalid && editUserForm.lastName.$dirty }">
+        <div class="error ng-hide" ng-show="editUserForm.lastName.$error.minlength">
+          <p>Provided name is too short!</p>
+        </div>
+        <div class="error ng-hide" ng-show="editUserForm.lastName.$error.maxlength">
+          <p>Max name length is 32, please shorten it.</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="form-input">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="E-Mail" name="email" ng-model="editUserObj.email" ng-required="true" remote-validated="used" user-email-unique="">
+          <div class="errors" ng-class="{ active: editUserForm.email.$invalid && editUserForm.email.$dirty }">
+              <div class="error ng-hide" ng-show="editUserForm.email.$error.email">
+                  <p>E-Mail seems invalid.</p>
+              </div>
+              <div class="error ng-hide" ng-show="editUserForm.email.$error.emailUnique">
+                  <p>E-Mail is already taken.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-input">
+          <label>Cell Phone</label>
+          <input type="text" class="form-control" placeholder="Cell Phone" name="cellPhone" ng-model="editUserObj.cellPhone" ng-minlength="7" ng-maxlength="12" ng-required="true">
+          <div class="errors" ng-class="{ active: editUserForm.cellPhone.$invalid && editUserForm.cellPhone.$dirty }">
+              <div class="error ng-hide" ng-show="editUserForm.cellPhone.$error.minlength">
+                  <p>Provided number is too short!</p>
+              </div>
+              <div class="error ng-hide" ng-s how="editUserForm.cellPhone.$error.maxlength">
+                  <p>Max number length is 32, please shorten it.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-input">
+          <label>Emergency Phone</label>
+          <input type="text" class="form-control" placeholder="Emergency Phone" name="emergencyPhone" ng-model="editUserObj.emergencyPhone" ng-minlength="7" ng-maxlength="12" ng-required="true">
+          <div class="errors" ng-class="{ active: editUserForm.emergencyPhone.$invalid && editUserForm.emergencyPhone.$dirty }">
+              <div class="error ng-hide" ng-show="editUserForm.emergencyPhone.$error.minlength">
+                  <p>Provided number is too short!</p>
+              </div>
+              <div class="error ng-hide" ng-s how="editUserForm.emergencyPhone.$error.maxlength">
+                  <p>Max number length is 32, please shorten it.</p>
+              </div>
+          </div>
+      </div>
+
+    <button class="btn btn-primary" type="submit"
+      ng-class="{ 'btn-primary': editUserForm.$valid && editUserForm.$dirty, 'btn-success': redirect }"
+      ng-disabled="editUserForm.$invalid || editUserForm.$pristine || xhr || redirect">
+      <span ng-hide="redirect">Save Changes <i class="fa fa-repeat fa-spin" ng-show="xhr"></i></span>
+      <span ng-show="redirect">Redirecting... <i class="fa fa-repeat fa-spin"></i></span>
+    </button>
+</form>

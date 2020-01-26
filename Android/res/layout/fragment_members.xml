@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <Spinner
+        android:id="@+id/group_contact_mode_spinner"
+        style="@style/AppBaseTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:entries="@array/contact_options" />
+
+    <Button
+        android:id="@+id/group_contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_group"
+        android:maxLines="2"
+        android:minEms="15"
+        android:minWidth="100dp"
+        android:text="Contact Group" />
+
+    </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/manager_contact_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <Spinner
+        android:id="@+id/manager_contact_mode_spinner"
+        style="@style/spinnerBasicStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:entries="@array/contact_options" />
+
+    <Button
+        android:id="@+id/manager_contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_cc_bcc"
+        android:maxLines="2"
+        android:minEms="15"
+        android:text="Contact Managers" />
+
+</LinearLayout>
+<View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark" />
+
+<ListView
+    android:id="@+id/memberListView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:choiceMode="multipleChoiceModal" >
+
+</ListView>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<div>
+    <h1>{{teamService.selectedTeam.teamName}} Expenses</h1>
+    <button type="button" class="btn btn-success" ng-click="addExpenseModal()" ng-disabled="teamService.selectedTeam.teamId == null">
+        <i class="fa icon-plus"></i> Add Expense
+    </button>
+    <button type="button" class="btn btn-danger" ng-disabled="expenseNotSelected()" confirmed-click="deleteExpense()"
+            ng-confirm-click="Are you sure you want to delete the selected expense?">
+        <i class="fa icon-minus"></i> Remove Selected
+    </button>
+    <div>
+        <strong class="expenseTotal">Expense Total:  <i class="fa icon-dollar"></i>{{expenseTotal}}</strong>
+    </div>
+    <div class="gridStyle" ng-grid="expenseGridOptions"></div>
+</div>

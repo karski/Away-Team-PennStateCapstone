@@ -1,0 +1,38 @@
+<div ng-controller="MemberController">
+    <h1>{{teamService.selectedTeam.teamName}} Members</h1>
+    <div class="container-fluid">
+        <accordion>
+            <accordion-group ng-repeat="member in teamMembers">
+                <accordion-heading>
+                    <i class="fa icon-user" tooltip="Team Manager" ng-show="teamService.selectedTeam.teamManaged == 'true' && member.manager"></i> {{member.firstName}} {{member.lastName}}
+                    <i class="pull-right fa icon-remove" tooltip="Remove User" ng-show="teamService.selectedTeam.teamManaged == 'true' && currentUserManager" confirmed-click="removeMember(member)"
+                       ng-confirm-click="Are you sure you want to remove the selected member?"></i>
+                    <i class="pull-right fa icon-level-up" tooltip="Promote to Manager" ng-show="teamService.selectedTeam.teamManaged == 'true' && member.manager == 'false' && currentUserManager" confirmed-click="promoteMember(member)"
+                       ng-confirm-click="Are you sure you want to promote the selected member?"></i>
+                    <i class="pull-right fa icon-level-down" tooltip="Demote from Manager" ng-show="teamService.selectedTeam.teamManaged == 'true' && member.manager == 'true' && currentUserManager" confirmed-click="demoteMember(member)"
+                       ng-confirm-click="Are you sure you want to demote the selected member?"></i>
+                </accordion-heading>
+                    <div>
+                        <div class="columnOne-wrap">
+                            <div class="columnOne">
+                                <label>Phone</label>
+                                <address>{{member.phone | tel}}</address>
+                            </div>
+                            <div class="columnOne">
+                                <label>Email</label>
+                                <address><a target="_blank" href="mailTo:{{member.email}}">{{member.email}}</a></address>
+                            </div>
+                        </div>
+                        <div class="columnTwo">
+                            <label>Last Known Location</label>
+                            <map style="display:block;height:300px" center="[{{member.locLatitude}}, {{member.locLongitude}}]"
+                                 map-type-control="false" scrollwheel="false" draggable="false" zoom-control="false" pan-control="false" overview-map-control="false" street-view-control="false" rotate-control="false">
+                                <marker position="[{{member.locLatitude}}, {{member.locLongitude}}]"></marker>
+                            </map>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+            </accordion-group>
+        </accordion>
+    </div>
+</div>

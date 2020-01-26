@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/team_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Team Name - Overview"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/team_location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Team Location Name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_margin="10dp"
+            android:textSize="25sp"
+            android:textColor="@android:color/holo_green_dark" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/team_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Team description here"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <View
+            android:id="@+id/pending_div"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/pending_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Pending Memberships"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/holo_orange_dark"
+            android:visibility="gone" />
+
+        <TableLayout
+            android:id="@+id/pending_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+        </TableLayout>
+
+        <View
+            android:id="@+id/manager_div"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/manager_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Team Managers"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <TableLayout
+            android:id="@+id/manager_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

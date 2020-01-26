@@ -1,0 +1,36 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Add Expense</h3>
+    </div>
+
+    <div class="modal-body">
+        <form name="addExpenseForm" role="addExpense">
+            <div class="form-input">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="Description" name="description" ng-model="addExpense.description" ng-required="true">
+            </div>
+            <div class="form-input">
+                <label>Total</label>
+                <input type="text" class="form-control" placeholder="Total Expense" name="amount" ng-model="addExpense.amount" ng-required="true">
+            </div>
+            <div class="form-input">
+                <label>Expense Type</label>
+                <br/>
+                <select name="expType" ng-model="addExpense.expType" ng-required="true"  ng-options="type.name for type in expenseTypes" ></select>
+            </div>
+            <div class="form-input">
+                <label>Date</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="addExpense.expDate" is-open="$parent.opened" max-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                       <button type="button" class="btn btn-default" ng-click="open()"><i class="fa icon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="ok()" ng-disabled="addExpenseForm.$invalid || addExpenseForm.$pristine || addExpenseWorking">Add Expense</button>
+        <button class="btn btn-danger" ng-click="cancel()" ng-disabled="addExpenseWorking">Cancel</button>
+    </div>
+</div>

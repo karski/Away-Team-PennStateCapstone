@@ -1,0 +1,114 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.psu.team3.app.awayteam.LoginActivity" >
+
+    <!-- Login progress -->
+
+    <LinearLayout
+        android:id="@+id/login_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:src="@drawable/big_logo"/>
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/login_status_message"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/login_progress_signing_in"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <!-- Login form -->
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            style="@style/LoginFormContainer"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/username_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/password_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:imeActionId="@+id/login"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/remember_me_checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="keep me signed in"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/sign_in_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:text="Sign in" />
+            </LinearLayout>
+
+
+<Space
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="50dip" />
+            
+            <Button
+                android:id="@+id/create_account_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_action_add_person"
+                android:text="Create New Account" />
+        </LinearLayout>
+    </ScrollView>
+
+</merge>

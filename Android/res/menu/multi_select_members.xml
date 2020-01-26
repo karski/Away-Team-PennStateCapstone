@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <group android:id="@+id/menu_group_call" >
+        <item
+            android:id="@+id/action_selected_call"
+            android:icon="@drawable/ic_action_call"
+            android:orderInCategory="1"
+            android:showAsAction="ifRoom"
+            android:title="Call"/>
+    </group>
+
+    <item
+        android:id="@+id/action_selected_sms"
+        android:icon="@drawable/ic_action_chat"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="SMS"/>
+    <item
+        android:id="@+id/action_selected_email"
+        android:icon="@drawable/ic_action_email"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="Email"/>
+
+    <group android:id="@+id/menu_group_manager_header" >
+        <item
+            android:enabled="false"
+            android:orderInCategory="1"
+            android:showAsAction="never"
+            android:title="► Manager Tools"/>
+    </group>
+    <group android:id="@+id/menu_group_manager_not_manager" >
+        <item
+            android:id="@+id/action_selected_promote"
+            android:icon="@drawable/ic_action_cc_bcc"
+            android:orderInCategory="1"
+            android:showAsAction="never"
+            android:title="     Make Manager"/>
+    </group>
+    <group android:id="@+id/menu_group_manager_not_self" >
+        <item
+            android:id="@+id/action_selected_remove"
+            android:icon="@drawable/ic_action_cancel"
+            android:orderInCategory="1"
+            android:showAsAction="never"
+            android:title="     Remove from Team"/>
+    </group>
+
+</menu>

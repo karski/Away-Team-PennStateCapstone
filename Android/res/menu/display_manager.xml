@@ -1,0 +1,62 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.psu.team3.app.awayteam.DisplayActivity" >
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_action_refresh"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:title="Refresh"/>
+    <item
+        android:id="@+id/action_leave"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="     Leave Team"/>
+    <item
+        android:enabled="false"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="► Manager Tools"/>
+    <item
+        android:id="@+id/action_edit_team"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="     Edit Team"/>
+    <item
+        android:id="@+id/action_add_manager"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="     Add Manager"/>
+    <item
+        android:enabled="false"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="► Other Teams"/>
+    <item
+        android:id="@+id/action_create_team"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="     Create New Team"/>
+    <item
+        android:id="@+id/action_join_team"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="     Join Existing Team"/>
+    <item
+        android:enabled="false"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="► Account Tools"/>
+    <item
+        android:id="@+id/action_modify_account"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="     Edit Account"/>
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="     Logout"/>
+
+</menu>

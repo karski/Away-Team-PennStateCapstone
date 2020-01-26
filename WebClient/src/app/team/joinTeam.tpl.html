@@ -1,0 +1,28 @@
+<div ng-init="loadTeams()">
+    <div class="modal-header">
+        <h3 class="modal-title">Join Team</h3>
+
+    </div>
+
+    <div class="modal-body">
+        <form class="form-inline">
+            <label>Team Name:</label>
+            <input type="text" ng-model="filterName" ng-change="setFilterName()" placeholder="Filter Name" autofocus>
+            <label>Location:</label>
+            <input type="text" ng-model="filterLocation" ng-change="setFilterLocation()" placeholder="Filter Location">
+        </form>
+
+        <div ng-hide="loadingTeams">
+            <p class="refreshIcon" ng-click="loadTeams()"> <i class="fa fa-refresh"></i> Refresh Teams</p>
+        </div>
+        <div ng-show="loadingTeams">
+            <p><i class="fa fa-spinner fa-spin"></i> Loading Teams</p>
+        </div>
+
+        <div class="gridStyle" ng-grid="joinTeamGridOptions"></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="ok()" ng-disabled="teamNotSelected() || joinTeamWorking">Join Team</button>
+        <button class="btn btn-danger" ng-click="cancel()" ng-disabled="joinTeamWorking">Cancel</button>
+    </div>
+</div>

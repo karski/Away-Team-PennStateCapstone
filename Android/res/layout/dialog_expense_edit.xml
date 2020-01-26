@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/expenseEditDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Date"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Spinner
+                android:id="@+id/expenseEditCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="0"
+                android:entries="@array/expense_categories" />
+
+            <EditText
+                android:id="@+id/expenseEditAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Amount"
+                android:inputType="number|numberDecimal"
+                android:selectAllOnFocus="true" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/expenseEditDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine|textCapSentences" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/expenseAddReceipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/ic_action_attachment"
+                android:text="Add Receipt" />
+
+            <ImageView
+                android:id="@+id/expenseReceiptThumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_action_attachment"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/expenseReceiptPath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="File"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</ScrollView>

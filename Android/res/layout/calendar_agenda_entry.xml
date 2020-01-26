@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/calendarEntryBack"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="?android:attr/activatedBackgroundIndicator">
+
+    <TextView
+        android:id="@+id/date_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF004477"
+        android:padding="5dp"
+        android:text="Day of Week, Date"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#DDDDDDDD"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="start - end"
+        android:textAppearance="?android:attr/textAppearance" />
+
+</LinearLayout>

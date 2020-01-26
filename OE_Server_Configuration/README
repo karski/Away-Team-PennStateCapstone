@@ -1,0 +1,22 @@
+#https://library.linode.com/security/ssl-certificates/subject-alternate-names
+#https://library.linode.com/web-servers/apache/ssl-guides/ubuntu-12.04-precise-pangolin
+
+/etc/apache2/apache2.conf
+/etc/apache2/ports.conf
+/etc/apache2/sites-available/default
+/etc/apache2/sites-available/awayteam.conf
+/etc/mysql/my.cnf
+/etc/php5/apache2/php.ini
+/etc/iptables.firewall.rules
+/etc/network/if-pre-up.d/firewall
+
+
+#Apache Sites
+
+a2ensite awayteam
+
+
+#Apache Modules
+a2enmod rewrite
+a2enmod headers
+a2enmod ssl

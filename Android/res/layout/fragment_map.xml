@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <ToggleButton
+                android:id="@+id/mapTeamLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team"
+                android:textOff="Team"
+                android:textOn="Team" />
+
+            <ToggleButton
+                android:id="@+id/mapFoodLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textOff="Food"
+                android:textOn="Food" />
+
+            <ToggleButton
+                android:id="@+id/mapTravelLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Travel"
+                android:textColor="@android:color/holo_green_dark"
+                android:textOff="Travel"
+                android:textOn="Travel" />
+
+            <ToggleButton
+                android:id="@+id/mapShopLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shop"
+                android:textColor="@android:color/holo_purple"
+                android:textOff="Shop"
+                android:textOn="Shop" />
+
+            <ToggleButton
+                android:id="@+id/mapEventsLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entertainment"
+                android:textColor="@android:color/holo_red_light"
+                android:textOff="Entertainment"
+                android:textOn="Entertainment" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</FrameLayout>

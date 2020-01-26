@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/event_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:text="Event Title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+         <TextView
+             android:id="@+id/calendar_location_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:layout_marginBottom="10dp"
+             android:text="Event Location"
+             android:textAppearance="?android:attr/textAppearanceLarge"
+             android:textColor="@android:color/holo_green_dark" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/calendar_start_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="start time"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/calendar_end_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:text="end time"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/calendar_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Event description goes here."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="italic" />
+
+<!--         <View -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="1dp" -->
+<!--             android:layout_weight="1" -->
+<!--             android:background="@android:color/holo_blue_dark" /> -->
+        
+<!--         <LinearLayout -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_margin="10dp" -->
+<!--             android:orientation="horizontal" > -->
+
+<!--             <Button -->
+<!--                 android:id="@+id/calendar_edit_button" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_gravity="right" -->
+<!--                 android:drawableLeft="@drawable/ic_action_edit" -->
+<!--                 android:text="Edit" /> -->
+
+<!--             <ImageButton -->
+<!--                 android:id="@+id/calendar_delete_button" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:src="@drawable/ic_action_discard" /> -->
+<!--         </LinearLayout> -->
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,72 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{modalTitle}}</h3>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-awayteam" name="eventForm" role="event">
+            <div class="form-input">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Event Name" name="teamEventName" ng-model="event.teamEventName" autofocus="true"
+                       ng-minlength="4" ng-required="true">
+                <div class="errors" ng-class="{ active: eventForm.teamEventName.$invalid && eventForm.teamEventName.$dirty }">
+                    <div class="error ng-hide" ng-show="eventForm.teamEventName.$error.minlength">
+                        <p>Title is too short!</p>
+                    </div>
+                    <div class="error ng-hide" ng-show="eventForm.teamEventName.$error.maxlength">
+                        <p>Max title length is 30, please shorten it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-input">
+                <label>Description</label>
+                <textarea rows="4" cols="50" type="text" class="form-control" placeholder="Description" name="teamEventDescription" ng-model="event.teamEventDescription"></textarea>
+            </div>
+
+            <div class="form-input">
+                <label>Location</label>
+                <input type="text" class="form-control" placeholder="Event Location" name="teamEventLocationString" ng-model="event.teamEventLocationString" autofocus="true"
+                       ng-required="true">
+            </div>
+
+
+            <div class="form-input">
+                <label>Event Start Date</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="event.teamEventStartTime" is-open="$parent.opened1" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                       <button type="button" class="btn btn-default" ng-click="open($event,'opened1')"><i class="fa icon-calendar"></i></button>
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="form-input">
+                <label>Start Time</label>
+                <timepicker ng-model="event.teamEventStartTime"  hour-step="1" minute-step="1" show-meridian="true"></timepicker>
+            </div>
+
+            <div class="form-input">
+                <label>Event End Date</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="event.teamEventEndTime" is-open="$parent.opened2" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                       <button type="button" class="btn btn-default" ng-click="open($event,'opened2')"><i class="fa icon-calendar"></i></button>
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="form-input">
+                <label>End Time</label>
+                <timepicker ng-model="event.teamEventEndTime"  hour-step="1" minute-step="1" show-meridian="true"></timepicker>
+            </div>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="ok()" ng-disabled="eventForm.$invalid || eventForm.$pristine || eventServiceWorking">OK</button>
+        <button class="btn btn-danger" ng-click="cancel()" ng-disabled="eventServiceWorking">Cancel</button>
+    </div>
+</div>

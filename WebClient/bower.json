@@ -1,0 +1,22 @@
+{
+  "name": "AwayTeam",
+  "version": "0.0.1",
+  "_comment": "Any dependencies added here require a manual edit to vendor_files in /Gruntfile.js and (??? verify the following) /build/karma-unit.js (e.g 'vendor/angular-resource/angular-resource.js')",
+  "devDependencies": {
+    "angular": "~1.2.21",
+    "angular-resource": "~1.2.18",
+    "angular-mocks": "~1.2.18",
+    "bootstrap": "~3.1.1",
+    "angular-bootstrap-jbruni": "~0.11.0",
+    "angular-ui-router": "~0.2.10",
+    "jquery": "~2.1.1",
+    "ng-grid": "~2.0.11"
+  },
+  "dependencies": {
+    "angular": "~1.2.21",
+    "angular-ui-router": "~0.2.10"
+  },
+  "resolutions": {
+    "jquery": "~2.1.1"
+  }
+}

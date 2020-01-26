@@ -1,0 +1,144 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.psu.team3.app.awayteam.LoginActivity" >
+
+    <!-- Login progress -->
+
+    <LinearLayout
+        android:id="@+id/create_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/create_status_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Creating new account"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <!-- Create form -->
+
+    <ScrollView
+        android:id="@+id/create_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <android.widget.LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/member_manager_tools_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please enter information below" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/new_username_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Username"
+                    android:inputType="text" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/username_check_button"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check Availability" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/password1_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/password2_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="30dip" />
+
+            <EditText
+                android:id="@+id/name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textCapWords|textPersonName" />
+
+            <EditText
+                android:id="@+id/phone_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Cell Phone"
+                android:inputType="textPhonetic|phone" />
+
+            <EditText
+                android:id="@+id/email_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/emer_phone_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Emergency Phone Number"
+                android:inputType="textPhonetic|phone" />
+
+            <Button
+                android:id="@+id/account_submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:drawableLeft="@drawable/ic_action_add_person"
+                android:text="Create Account" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </android.widget.LinearLayout>
+    </ScrollView>
+
+</merge>

@@ -1,0 +1,32 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{modalTitle}}</h3>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-signin" name="taskForm" role="task">
+            <div class="form-input">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Task Title" name="taskTitle" ng-model="task.taskTitle" autofocus="true"
+                       ng-minlength="4" ng-required="true">
+                <div class="errors" ng-class="{ active: taskForm.title.$invalid && taskForm.title.$dirty }">
+                    <div class="error ng-hide" ng-show="taskForm.title.$error.minlength">
+                        <p>Title is too short!</p>
+                    </div>
+                    <div class="error ng-hide" ng-show="taskForm.title.$error.maxlength">
+                        <p>Max title length is 30, please shorten it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-input">
+                <label>Description</label>
+                <textarea rows="4" cols="50" type="text" class="form-control" placeholder="Description" name="taskDescription" ng-model="task.taskDescription"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="ok()" ng-disabled="taskForm.$invalid || taskForm.$pristine || taskServiceWorking">OK</button>
+        <button class="btn btn-danger" ng-click="cancel()" ng-disabled="taskServiceWorking">Cancel</button>
+    </div>
+</div>

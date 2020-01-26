@@ -1,0 +1,16 @@
+<div>
+    <div class="jumbotron main-jumbo">
+        <h1>{{teamService.selectedTeam.teamName}}</h1>
+        <p>{{teamService.selectedTeam.teamDescription}}</p>
+        <i>{{teamService.selectedTeam.teamLocationName}}</i>
+        <hr/>
+        <div class="editButton">
+            <i class="fa fa-edit" ng-hide="teamService.selectedTeam.teamId == null" ng-click="modifyTeamModal()" tooltip="Edit Team"></i>
+            <i class="fa icon-signout" ng-hide="teamService.selectedTeam.teamId == null" confirmed-click="leaveTeam()"
+               ng-confirm-click="Are you sure you want to leave the team?" tooltip="Leave Team"></i>
+        </div>
+
+    </div>
+
+    <div ng-include="'tasks/tasks.tpl.html'"></div>
+</div>

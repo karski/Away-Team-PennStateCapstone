@@ -1,0 +1,92 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" ng-controller="HeaderController">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-click="navbarCollapsed = !navbarCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="home"><img class="img-responsive" src="./assets/logos/atSmall.svg" width="32" height="26"/></a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+
+        <li id="alertDropdown" class="dropdown" ng-show="loginService.isLoggedIn">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-bell fa-fw"></i><span class="badge">{{managerService.pendingUsers.length}}</span>
+            </a>
+            <ul class="dropdown-menu dropdown-alerts" role="alerts">
+                <li ng-repeat="user in pendingUsers">
+                    <a href="" >
+                        <div>
+                            <strong>{{user.firstName}} {{user.lastName}}</strong>
+                            <span class="pull-right">
+                                <button class="btn btn-success" tooltip="Approve" ng-click="managerAction(user.teamId, 'approve', user.loginId)"><i class="fa fa-check fa-fw"></i></button>
+                                <button class="btn btn-danger" tooltip="Deny" ng-click="managerAction(user.teamId, 'remove', user.loginId)"><i class="fa fa-times fa-fw"></i></button>
+                            </span>
+                        </div>
+                        <div> Request for {{user.teamName}}</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- /.dropdown-messages -->
+
+
+        <li id="teamDropDown" class="dropdown" ng-show="loginService.isLoggedIn" ng-controller="TeamController">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                Teams <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-teams" role="menu">
+                <li ng-repeat="team in userTeams"><a href="" ng-class="{pendingTeamApproval: team.pendingApproval}" ng-click="selectTeam(team.teamId, team.pendingApproval)"
+                                                     tooltip="Request Pending Approval"
+                                                     tooltip-trigger="{{{true: 'mouseenter', false: 'never'}[team.pendingApproval]}}">{{team.teamName}}</a></li>
+                <li class="divider"></li>
+                <li><a href="" ng-click="createTeamModal()">Create Team</a></li>
+                <li><a href="" ng-click="joinTeamModal()">Join Team</a></li>
+            </ul>
+        </li>
+        <!-- /.dropdown teams -->
+        <li class="dropdown" ng-show="loginService.isLoggedIn">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                {{ loginService.user.loginId }} <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user" role="menu">
+                <li><a href="" ui-sref="register">Add Account</a></li>
+                <li><a href="" ui-sref="editAccount">Edit Account</a></li>
+                <li><a href="" ng-click="changePWOpen()">Change Password</a></li>
+                <li class="divider"></li>
+                <li><a href="" ng-click="logout()">Logout</a></li>
+            </ul>
+        </li>
+        <!-- /.dropdown user -->
+        <li>
+            <form class="navbar-form navbar-right" name="loginForm" role="login" ng-submit="attemptLogin()" ng-hide="loginService.isLoggedIn || !loginService.doneLoading" ng-init="setLoginForm();">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="login.loginId" name="loginId" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" ng-model="login.password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default" ng-disabled="login.working">Login <i class="fa" ng-class="login.working ? 'fa-cog fa-spin' : 'fa-sign-in'"></i></button>
+                <button type="submit" class="btn btn-default" ng-disabled="login.working" ui-sref="register">Register <i class="fa" ng-class="'fa-user'"></i></button>
+                <br/>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="rememberMe" ng-model="login.rememberMe" ng-true-value="true" ng-false-value="false" ng-class="{ 'active': !loginService.isLoggedIn }"> Remember Me
+                </label>
+                <a href="" class="forgotPasswordAnchor" ng-click="resetPWOpen()">Forgot Password?</a>
+            </form>
+
+            <!-- Spinner -->
+            <button class="btn btn-default navbar-btn navbar-right" ng-hide="loginService.doneLoading">
+                <i class="fa fa-spinner fa-spin"></i>
+            </button>
+        </li>
+        <!-- /.form -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div ng-include="'sidebar/sidebar.tpl.html'"></div>
+    <!-- /.navbar-static-side -->
+</nav>

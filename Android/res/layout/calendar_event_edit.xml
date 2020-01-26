@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <EditText
+        android:id="@+id/edit_event_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:ems="20"
+        android:hint="Event Name" >
+
+        <requestFocus />
+    </EditText>
+
+        <Button
+            android:id="@+id/calendar_done_edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:drawableLeft="@drawable/ic_action_accept"
+            android:text="Done" />
+            </LinearLayout>
+
+<TextView
+    android:id="@+id/member_manager_tools_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Start Time"
+    android:textColor="@android:color/darker_gray" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+<!-- TODO: consider replacing these with text views and using another popup to assign values -->
+<DatePicker
+    android:id="@+id/startDatePicker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+<TimePicker
+    android:id="@+id/startTimePicker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+</LinearLayout>
+<TextView
+    android:id="@+id/expenseText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="End Time"
+    android:textColor="@android:color/darker_gray" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+<DatePicker
+    android:id="@+id/endDatePicker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+<TimePicker
+    android:id="@+id/endTimePicker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+<EditText
+    android:id="@+id/teamNameInput"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="Location" />
+<View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark" />
+
+        <EditText
+            android:id="@+id/expenseEditAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Event Description"
+            android:inputType="textMultiLine" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_dark" />
+        <Button
+            android:id="@+id/calendar_edit_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_action_cancel"
+            android:text="Cancel" />
+
+    </LinearLayout>
+    
+
+</ScrollView>
